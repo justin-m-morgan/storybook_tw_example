@@ -8,7 +8,7 @@
 
 /* This will likely be appropriate if you do any extra templating in your storybooks */
 /* Ex. if you create a custom container */
-@source "../storybook/**/*.*exs";
+@source "../../storybook/**/*.*exs";
 
 /* A Tailwind plugin that makes "hero-#{ICON}" classes available.
    The heroicons installation itself is managed by your mix.exs */
