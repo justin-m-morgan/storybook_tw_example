@@ -1,6 +1,9 @@
 defmodule StorybookTwExampleWeb.Router do
   use StorybookTwExampleWeb, :router
 
+  use StorybookTwExampleWeb, :router
+  import PhoenixStorybook.Router
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -12,6 +15,15 @@ defmodule StorybookTwExampleWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+  end
+
+  scope "/" do
+    storybook_assets()
+  end
+
+  scope "/", StorybookTwExampleWeb do
+    pipe_through(:browser)
+    live_storybook("/storybook", backend_module: StorybookTwExampleWeb.Storybook)
   end
 
   scope "/", StorybookTwExampleWeb do

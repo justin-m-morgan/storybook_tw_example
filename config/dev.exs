@@ -16,7 +16,8 @@ config :storybook_tw_example, StorybookTwExampleWeb.Endpoint,
   secret_key_base: "4AmNzSPXQF1OUtBMpCyM01iVhHxMxDO3EJw5Z57rfym5LAlbd/4XoKiVsG8v4cAi",
   watchers: [
     esbuild: {Esbuild, :install_and_run, [:storybook_tw_example, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:storybook_tw_example, ~w(--watch)]}
+    tailwind: {Tailwind, :install_and_run, [:storybook_tw_example, ~w(--watch)]},
+    storybook_tailwind: {Tailwind, :install_and_run, [:storybook, ~w(--watch)]}
   ]
 
 # ## SSL Support
@@ -48,7 +49,8 @@ config :storybook_tw_example, StorybookTwExampleWeb.Endpoint,
     web_console_logger: true,
     patterns: [
       ~r"priv/static/(?!uploads/).*(js|css|png|jpeg|jpg|gif|svg)$",
-      ~r"lib/storybook_tw_example_web/(controllers|live|components)/.*(ex|heex)$"
+      ~r"lib/storybook_tw_example_web/(controllers|live|components)/.*(ex|heex)$",
+      ~r"storybook/.*(exs)$"
     ]
   ]
 

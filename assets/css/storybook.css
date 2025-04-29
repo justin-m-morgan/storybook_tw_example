@@ -1,3 +1,8 @@
+/* Skipped this step in the manual instructions */
+/* important: ".storybook-tw-example-web", */
+/* isn't a direct solution for this in the new css approach to config */
+/* See: https://github.com/tailwindlabs/tailwindcss/discussions/15866 */
+
 /* This is your custom storybook stylesheet. */
 @import "tailwindcss/base";
 @import "tailwindcss/components";

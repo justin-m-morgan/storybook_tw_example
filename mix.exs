@@ -69,6 +69,7 @@ defmodule StorybookTwExample.MixProject do
       "assets.build": ["tailwind storybook_tw_example", "esbuild storybook_tw_example"],
       "assets.deploy": [
         "tailwind storybook_tw_example --minify",
+        "tailwind storybook --minify",
         "esbuild storybook_tw_example --minify",
         "phx.digest"
       ]
